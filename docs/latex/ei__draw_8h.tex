@@ -1,0 +1,168 @@
+\hypertarget{ei__draw_8h}{}\section{ei\+\_\+draw.\+h File Reference}
+\label{ei__draw_8h}\index{ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}}
+
+
+Graphical primitives to draw lines, polygons, text, and operation of drawing surfaces.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ei\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hw\+\_\+interface.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{ei__draw_8h_a045556ef7934c8fc9dc9eb5d8836f8f5}{ei\+\_\+map\+\_\+rgba} (\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t} surface, const \hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t} $\ast$color)
+\begin{DoxyCompactList}\small\item\em Converts the three red, green and blue component of a color in a 32 bits integer using the order of the channels of the surface. This integer can be stored directly in the pixels memory of the surface (ie. \hyperlink{hw__interface_8h_a8942e332c58a06edd0e639e6743532d1}{hw\+\_\+surface\+\_\+get\+\_\+buffer}). \end{DoxyCompactList}\item 
+void \hyperlink{ei__draw_8h_ae638a8e54c62dc95a11f8bde77dbb322}{ei\+\_\+draw\+\_\+polyline} (\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t} surface, const \hyperlink{structei__linked__point__t}{ei\+\_\+linked\+\_\+point\+\_\+t} $\ast$first\+\_\+point, const \hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t} color, const \hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em Draws a line made of many line segments. \end{DoxyCompactList}\item 
+void \hyperlink{ei__draw_8h_aaf316386776baf03f3cdd53719db3d3b}{ei\+\_\+draw\+\_\+polygon} (\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t} surface, const \hyperlink{structei__linked__point__t}{ei\+\_\+linked\+\_\+point\+\_\+t} $\ast$first\+\_\+point, const \hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t} color, const \hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em Draws a filled polygon. \end{DoxyCompactList}\item 
+void \hyperlink{ei__draw_8h_abeaa7e444fa2795fcdcc08bdc9c77f86}{ei\+\_\+draw\+\_\+text} (\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t} surface, const \hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t} $\ast$where, const char $\ast$text, const \hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t} font, const \hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t} $\ast$color, const \hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em Draws text by calling \hyperlink{hw__interface_8h_a806521541c5a5a80fbf43105270919e4}{hw\+\_\+text\+\_\+create\+\_\+surface}. \end{DoxyCompactList}\item 
+void \hyperlink{ei__draw_8h_a8df4b1a25d4b7c46851a4e7a12a45b2e}{ei\+\_\+fill} (\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t} surface, const \hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t} $\ast$color, const \hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em Fills the surface with the specified color. \end{DoxyCompactList}\item 
+int \hyperlink{ei__draw_8h_aed79866305779883d82b5d9aab9a63db}{ei\+\_\+copy\+\_\+surface} (\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t} destination, const \hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t} $\ast$dst\+\_\+rect, const \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t} source, const \hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t} $\ast$src\+\_\+rect, const \hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\+\_\+bool\+\_\+t} alpha)
+\begin{DoxyCompactList}\small\item\em Copies a surface, or a subpart, to another one. The source and destination area of the copy (either the entire surfaces, or subparts) must have the same size (before clipping). Both the source and destination surfaces must be {\itshape locked} by \hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Graphical primitives to draw lines, polygons, text, and operation of drawing surfaces. 
+
+\begin{DoxyAuthor}{Author}
+Created by François Bérard on 30.\+12.\+11. Copyright 2011 Ensimag. All rights reserved. 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ei__draw_8h_aed79866305779883d82b5d9aab9a63db}\label{ei__draw_8h_aed79866305779883d82b5d9aab9a63db}} 
+\index{ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}!ei\+\_\+copy\+\_\+surface@{ei\+\_\+copy\+\_\+surface}}
+\index{ei\+\_\+copy\+\_\+surface@{ei\+\_\+copy\+\_\+surface}!ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}}
+\subsubsection{\texorpdfstring{ei\+\_\+copy\+\_\+surface()}{ei\_copy\_surface()}}
+{\footnotesize\ttfamily int ei\+\_\+copy\+\_\+surface (\begin{DoxyParamCaption}\item[{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}]{destination,  }\item[{const \hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t} $\ast$}]{dst\+\_\+rect,  }\item[{const \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}]{source,  }\item[{const \hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t} $\ast$}]{src\+\_\+rect,  }\item[{const \hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\+\_\+bool\+\_\+t}}]{alpha }\end{DoxyParamCaption})}
+
+
+
+Copies a surface, or a subpart, to another one. The source and destination area of the copy (either the entire surfaces, or subparts) must have the same size (before clipping). Both the source and destination surfaces must be {\itshape locked} by \hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & The surface on which to copy pixels from the source surface. \\
+\hline
+{\em dst\+\_\+rect} & If N\+U\+LL, the entire destination surface is used. If not N\+U\+LL, defines the rectangle on the destination surface where to copy the pixels. \\
+\hline
+{\em source} & The surface from which to copy pixels. \\
+\hline
+{\em src\+\_\+rect} & If N\+U\+LL, the entire source surface is used. If not N\+U\+LL, defines the rectangle on the source surface from which to copy the pixels. \\
+\hline
+{\em alpha} & If true, the final pixels are a combination of source and destination pixels weighted by the source alpha channel. The transparency of the final pixels is set to opaque. If false, the final pixels are an exact copy of the source pixels, including the alpha channel.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, 1 on failure (different R\+OI size). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ei__draw_8h_aaf316386776baf03f3cdd53719db3d3b}\label{ei__draw_8h_aaf316386776baf03f3cdd53719db3d3b}} 
+\index{ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}!ei\+\_\+draw\+\_\+polygon@{ei\+\_\+draw\+\_\+polygon}}
+\index{ei\+\_\+draw\+\_\+polygon@{ei\+\_\+draw\+\_\+polygon}!ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}}
+\subsubsection{\texorpdfstring{ei\+\_\+draw\+\_\+polygon()}{ei\_draw\_polygon()}}
+{\footnotesize\ttfamily void ei\+\_\+draw\+\_\+polygon (\begin{DoxyParamCaption}\item[{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}]{surface,  }\item[{const \hyperlink{structei__linked__point__t}{ei\+\_\+linked\+\_\+point\+\_\+t} $\ast$}]{first\+\_\+point,  }\item[{const \hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}]{color,  }\item[{const \hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Draws a filled polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & Where to draw the polygon. The surface must be {\itshape locked} by \hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}. \\
+\hline
+{\em first\+\_\+point} & The head of a linked list of the points of the line. It is either N\+U\+LL (i.\+e. draws nothing), or has more than 2 points. \\
+\hline
+{\em color} & The color used to draw the polygon, alpha channel is managed. \\
+\hline
+{\em clipper} & If not N\+U\+LL, the drawing is restricted within this rectangle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ei__draw_8h_ae638a8e54c62dc95a11f8bde77dbb322}\label{ei__draw_8h_ae638a8e54c62dc95a11f8bde77dbb322}} 
+\index{ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}!ei\+\_\+draw\+\_\+polyline@{ei\+\_\+draw\+\_\+polyline}}
+\index{ei\+\_\+draw\+\_\+polyline@{ei\+\_\+draw\+\_\+polyline}!ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}}
+\subsubsection{\texorpdfstring{ei\+\_\+draw\+\_\+polyline()}{ei\_draw\_polyline()}}
+{\footnotesize\ttfamily void ei\+\_\+draw\+\_\+polyline (\begin{DoxyParamCaption}\item[{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}]{surface,  }\item[{const \hyperlink{structei__linked__point__t}{ei\+\_\+linked\+\_\+point\+\_\+t} $\ast$}]{first\+\_\+point,  }\item[{const \hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t}}]{color,  }\item[{const \hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Draws a line made of many line segments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & Where to draw the line. The surface must be {\itshape locked} by \hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}. \\
+\hline
+{\em first\+\_\+point} & The head of a linked list of the points of the line. It can be N\+U\+LL (i.\+e. draws nothing), can have a single point, or more. If the last point is the same as the first point, then this pixel is drawn only once. \\
+\hline
+{\em color} & The color used to draw the line, alpha channel is managed. \\
+\hline
+{\em clipper} & If not N\+U\+LL, the drawing is restricted within this rectangle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ei__draw_8h_abeaa7e444fa2795fcdcc08bdc9c77f86}\label{ei__draw_8h_abeaa7e444fa2795fcdcc08bdc9c77f86}} 
+\index{ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}!ei\+\_\+draw\+\_\+text@{ei\+\_\+draw\+\_\+text}}
+\index{ei\+\_\+draw\+\_\+text@{ei\+\_\+draw\+\_\+text}!ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}}
+\subsubsection{\texorpdfstring{ei\+\_\+draw\+\_\+text()}{ei\_draw\_text()}}
+{\footnotesize\ttfamily void ei\+\_\+draw\+\_\+text (\begin{DoxyParamCaption}\item[{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}]{surface,  }\item[{const \hyperlink{structei__point__t}{ei\+\_\+point\+\_\+t} $\ast$}]{where,  }\item[{const char $\ast$}]{text,  }\item[{const \hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\+\_\+font\+\_\+t}}]{font,  }\item[{const \hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t} $\ast$}]{color,  }\item[{const \hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Draws text by calling \hyperlink{hw__interface_8h_a806521541c5a5a80fbf43105270919e4}{hw\+\_\+text\+\_\+create\+\_\+surface}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & Where to draw the text. The surface must be {\itshape locked} by \hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}. \\
+\hline
+{\em where} & Coordinates, in the surface, where to anchor the top-\/left corner of the rendered text. \\
+\hline
+{\em text} & The string of the text. Can\textquotesingle{}t be N\+U\+LL. \\
+\hline
+{\em font} & The font used to render the text. If N\+U\+LL, the \hyperlink{ei__types_8h_a722bfa1a8a9a4202fb2d4abce2f06a8c}{ei\+\_\+default\+\_\+font} is used. \\
+\hline
+{\em color} & The text color. Can\textquotesingle{}t be N\+U\+LL. The alpha parameter is not used. \\
+\hline
+{\em clipper} & If not N\+U\+LL, the drawing is restricted within this rectangle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ei__draw_8h_a8df4b1a25d4b7c46851a4e7a12a45b2e}\label{ei__draw_8h_a8df4b1a25d4b7c46851a4e7a12a45b2e}} 
+\index{ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}!ei\+\_\+fill@{ei\+\_\+fill}}
+\index{ei\+\_\+fill@{ei\+\_\+fill}!ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}}
+\subsubsection{\texorpdfstring{ei\+\_\+fill()}{ei\_fill()}}
+{\footnotesize\ttfamily void ei\+\_\+fill (\begin{DoxyParamCaption}\item[{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}]{surface,  }\item[{const \hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t} $\ast$}]{color,  }\item[{const \hyperlink{structei__rect__t}{ei\+\_\+rect\+\_\+t} $\ast$}]{clipper }\end{DoxyParamCaption})}
+
+
+
+Fills the surface with the specified color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface to be filled. The surface must be {\itshape locked} by \hyperlink{hw__interface_8h_a1b9b22f29bb9de0b39ea904fd66251be}{hw\+\_\+surface\+\_\+lock}. \\
+\hline
+{\em color} & The color used to fill the surface. If N\+U\+LL, it means that the caller want it painted black (opaque). \\
+\hline
+{\em clipper} & If not N\+U\+LL, the drawing is restricted within this rectangle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ei__draw_8h_a045556ef7934c8fc9dc9eb5d8836f8f5}\label{ei__draw_8h_a045556ef7934c8fc9dc9eb5d8836f8f5}} 
+\index{ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}!ei\+\_\+map\+\_\+rgba@{ei\+\_\+map\+\_\+rgba}}
+\index{ei\+\_\+map\+\_\+rgba@{ei\+\_\+map\+\_\+rgba}!ei\+\_\+draw.\+h@{ei\+\_\+draw.\+h}}
+\subsubsection{\texorpdfstring{ei\+\_\+map\+\_\+rgba()}{ei\_map\_rgba()}}
+{\footnotesize\ttfamily uint32\+\_\+t ei\+\_\+map\+\_\+rgba (\begin{DoxyParamCaption}\item[{\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\+\_\+surface\+\_\+t}}]{surface,  }\item[{const \hyperlink{structei__color__t}{ei\+\_\+color\+\_\+t} $\ast$}]{color }\end{DoxyParamCaption})}
+
+
+
+Converts the three red, green and blue component of a color in a 32 bits integer using the order of the channels of the surface. This integer can be stored directly in the pixels memory of the surface (ie. \hyperlink{hw__interface_8h_a8942e332c58a06edd0e639e6743532d1}{hw\+\_\+surface\+\_\+get\+\_\+buffer}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface where to store this pixel. \\
+\hline
+{\em color} & The color to convert, can\textquotesingle{}t be N\+U\+LL.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The 32 bit integer corresponding to the color. The alpha component of the color is ignored in the case of surfaces the don\textquotesingle{}t have an alpha channel. 
+\end{DoxyReturn}
